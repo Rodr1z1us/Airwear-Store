@@ -18,6 +18,8 @@ Este proyecto consiste en la creación de una API con MongoDB para una tienda de
 
 **Prendas**
 
+```
+
 {
   nombre: "Camiseta básica",
   marca: "AirWear",
@@ -27,9 +29,11 @@ Este proyecto consiste en la creación de una API con MongoDB para una tienda de
   colores: ["blanco", "negro"],
   stock: 50
 }
+```
 
 **Ventas**
 
+```
 {
   prenda: { 
     nombre: "camiseta basica",
@@ -40,3 +44,4 @@ Este proyecto consiste en la creación de una API con MongoDB para una tienda de
   total: 59.99,
   usuario: { username: "maria_garcia" }
 }
+```
