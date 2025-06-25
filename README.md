@@ -4,6 +4,8 @@ Este proyecto consiste en la creación de una API con MongoDB para una tienda de
 
 **Usuarios**
 
+```json
+
 {
   username: "ligia_bravo",
   email: "libra@msn.com",
@@ -11,6 +13,8 @@ Este proyecto consiste en la creación de una API con MongoDB para una tienda de
   rol: "cliente",
   fecha_registro: new Date("2025-01-15")
 }
+
+```
 
 **Prendas**
 
