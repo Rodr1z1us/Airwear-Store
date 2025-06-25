@@ -2,7 +2,7 @@
 
 Este proyecto consiste en la creación de una API con MongoDB para una tienda de ropa, junto con un frontend que permite la gestión de usuarios, prendas y ventas. El sistema completo ofrece operaciones básicas como inserción, actualización, eliminación y consultas avanzadas a través de una interfaz web.
 
-Usuarios
+**Usuarios**
 
 {
   username: "ligia_bravo",
@@ -12,7 +12,7 @@ Usuarios
   fecha_registro: new Date("2025-01-15")
 }
 
-Prendas
+**Prendas**
 
 {
   nombre: "Camiseta básica",
@@ -24,7 +24,7 @@ Prendas
   stock: 50
 }
 
-Ventas
+**Ventas**
 
 {
   prenda: { 
