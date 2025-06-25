@@ -1,58 +1,55 @@
-// 📚 CRUD para Tienda de Ropa usando MongoDB
 
-// ---------------------------------------------
-// a. Creación de la base de datos
-// ---------------------------------------------
 use tiendaRopaDB;
 
-// ---------------------------------------------
-// Colección: usuarios
-// ---------------------------------------------
 
-// Insertar un usuario
+// USUARIOS--------------------------------------------------------------------------------------------------------------------
+
+
+// Insertar 
 db.usuarios.insertOne({
-  username: "maria_garcia",
-  email: "maria@example.com",
-  password: "claveSegura456",
-  rol: "cliente",
-  fecha_registro: new Date("2025-01-15")
-});
+    username: "admin_ropa",
+    email: "admin@airwear.com",
+    password: "12345",
+    rol: "admin",
+    fecha_registro: new Date("2025-01-10")
+  });
 
-// Insertar varios usuarios
+// Insertar varios
 db.usuarios.insertMany([
   {
-    username: "juan_perez",
-    email: "juan@example.com",
+    username: "omar_birra",
+    email: "juan@msn.com",
     password: "juanito123",
     rol: "cliente",
     fecha_registro: new Date("2025-02-20")
   },
   {
-    username: "admin_ropa",
-    email: "admin@tiendaropa.com",
-    password: "adminSecure2025",
-    rol: "admin",
-    fecha_registro: new Date("2025-01-10")
-  }
+  username: "maria_garcia",
+  email: "maria@msn.com",
+  password: "claveSegura456",
+  rol: "cliente",
+  fecha_registro: new Date("2025-01-15")
+}
 ]);
 
-// Actualizar usuario
+
+// Actualizar 
 db.usuarios.updateOne(
   { username: "maria_garcia" },
-  { $set: { email: "maria.nuevo@example.com" } }
+  { $set: { email: "maria.nuevo@gmail.com" } }
 );
 
-// Eliminar usuario
-db.usuarios.deleteOne({ username: "juan_perez" });
+// Eliminar 
+db.usuarios.deleteOne({ username: "omar_birra" });
 
-// ---------------------------------------------
-// Colección: prendas
-// ---------------------------------------------
 
-// Insertar una prenda
+//PRENDAS--------------------------------------------------------------------------------------------------------------------
+
+
+// Insertar 
 db.prendas.insertOne({
   nombre: "Camiseta básica",
-  marca: "Zara",
+  marca: "AirWear",
   categoria: "Camisetas",
   precio: 19.99,
   tallas_disponibles: ["S", "M", "L"],
@@ -60,11 +57,12 @@ db.prendas.insertOne({
   stock: 50
 });
 
-// Insertar varias prendas
+
+// Insertar varias
 db.prendas.insertMany([
   {
     nombre: "Jeans slim fit",
-    marca: "Levi's",
+    marca: "AirWear",
     categoria: "Pantalones",
     precio: 59.99,
     tallas_disponibles: ["28", "30", "32", "34"],
@@ -73,7 +71,7 @@ db.prendas.insertMany([
   },
   {
     nombre: "Chaqueta de cuero",
-    marca: "Guess",
+    marca: "AirWear",
     categoria: "Abrigos",
     precio: 129.99,
     tallas_disponibles: ["S", "M", "L"],
@@ -82,7 +80,7 @@ db.prendas.insertMany([
   },
   {
     nombre: "Vestido floral",
-    marca: "Mango",
+    marca: "AirWear",
     categoria: "Vestidos",
     precio: 39.99,
     tallas_disponibles: ["XS", "S", "M"],
@@ -91,24 +89,23 @@ db.prendas.insertMany([
   }
 ]);
 
-// Actualizar precio de una prenda
+// Actualizar 
 db.prendas.updateOne(
   { nombre: "Camiseta básica" },
   { $set: { precio: 22.99 } }
 );
 
-// Eliminar una prenda
+// Eliminar
 db.prendas.deleteOne({ nombre: "Vestido floral" });
 
-// ---------------------------------------------
-// Colección: ventas
-// ---------------------------------------------
 
-// Insertar una venta
+// VENTAS--------------------------------------------------------------------------------------------------------------------
+
+// Insertar 
 db.ventas.insertOne({
   prenda: { 
     nombre: "Jeans slim fit",
-    marca: "Levi's"
+    marca: "AirWear"
   },
   fecha_venta: new Date("2025-05-10"),
   cantidad: 1,
@@ -116,12 +113,12 @@ db.ventas.insertOne({
   usuario: { username: "maria_garcia" }
 });
 
-// Insertar varias ventas
+// Insertar varias
 db.ventas.insertMany([
   {
     prenda: { 
       nombre: "Camiseta básica",
-      marca: "Zara"
+      marca: "AirWear"
     },
     fecha_venta: new Date("2025-05-10"),
     cantidad: 2,
@@ -131,7 +128,7 @@ db.ventas.insertMany([
   {
     prenda: { 
       nombre: "Chaqueta de cuero",
-      marca: "Guess"
+      marca: "AirWear"
     },
     fecha_venta: new Date("2025-05-11"),
     cantidad: 1,
@@ -141,7 +138,7 @@ db.ventas.insertMany([
   {
     prenda: { 
       nombre: "Jeans slim fit",
-      marca: "Levi's"
+      marca: "AirWear"
     },
     fecha_venta: new Date("2025-05-12"),
     cantidad: 3,
@@ -151,7 +148,7 @@ db.ventas.insertMany([
   {
     prenda: { 
       nombre: "Camiseta básica",
-      marca: "Zara"
+      marca: "AirWear"
     },
     fecha_venta: new Date("2025-05-12"),
     cantidad: 1,
@@ -160,21 +157,22 @@ db.ventas.insertMany([
   }
 ]);
 
-// Actualizar total de una venta
+// Actualizar 
 db.ventas.updateOne(
   { "prenda.nombre": "Camiseta básica", cantidad: 2 },
   { $set: { total: 39.98 } }
 );
 
-// Eliminar una venta
+// Eliminar
 db.ventas.deleteOne({ "prenda.nombre": "Chaqueta de cuero" });
+  
 
-// ---------------------------------------------
-// c. Consultas
-// ---------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
 
-// i. Obtener la cantidad vendida de prendas por fecha y filtrarla con una fecha específica
-// Esta consulta agrupa las ventas por fecha y suma la cantidad de prendas vendidas para una fecha específica
+
+//  Obtener la cantidad vendida de prendas por fecha 
+
+
 db.ventas.aggregate([
   {
     $match: {
@@ -191,8 +189,8 @@ db.ventas.aggregate([
   }
 ]);
 
-// ii. Obtener la lista de todas las marcas que tienen al menos una venta
-// Esta consulta obtiene las marcas únicas que aparecen en las ventas
+//  marcas que tienen al menos una venta
+
 db.ventas.aggregate([
   {
     $group: {
@@ -201,8 +199,8 @@ db.ventas.aggregate([
   }
 ]);
 
-// iii. Obtener prendas vendidas y su cantidad restante en stock
-// Esta consulta relaciona las ventas con las prendas para mostrar cuántas unidades se han vendido y cuántas quedan en stock
+//  prendas vendidas y su cantidad restante en stock
+
 db.ventas.aggregate([
   {
     $lookup: {
@@ -232,8 +230,8 @@ db.ventas.aggregate([
   }
 ]);
 
-// iv. Obtener listado de las 5 marcas más vendidas y su cantidad de ventas
-// Esta consulta agrupa las ventas por marca, suma la cantidad vendida y las ordena de mayor a menor, limitando a 5 resultados
+//  5 marcas más vendidas y su cantidad 
+
 db.ventas.aggregate([
   {
     $group: {
