@@ -1,6 +1,6 @@
 # AirWear API
 
-## Setupu
+## Dependencias
 1. Entorno virtual:
 ```bash
 python -m venv venv
