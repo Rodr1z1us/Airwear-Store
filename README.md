@@ -1,11 +1,5 @@
-﻿# Airwear-Store API
 
- 
----
-
-# Explicación del Proyecto en Español
-
-La API cumple con todos los requisitos solicitados:
+# AirWear API
 
 1. **Endpoints por Modelo/Tabla**:
    - Se implementaron operaciones CRUD completas (Crear, Leer, Actualizar, Eliminar) para cada modelo:
