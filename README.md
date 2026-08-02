@@ -1,13 +1,13 @@
-# AirWear API
+# Clothing Store API
 
-## Dependencias
-1. Entorno virtual:
+## Dependencies
+1. Virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-2. Instalar dependencias:
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
@@ -19,7 +19,7 @@ python run.py
 
 ## Postman
 
-### Marcas
+### Brands
 - GET http://127.0.0.1:5000/api/v1/marcas
 - GET http://127.0.0.1:5000/api/v1/marcas/{id}
 - POST http://127.0.0.1:5000/api/v1/marcas
@@ -32,7 +32,7 @@ python run.py
   ```
 - DELETE http://127.0.0.1:5000/api/v1/marcas/{id}
 
-### Prendas
+### Pieces
 - GET http://127.0.0.1:5000/api/v1/prendas
 - GET http://127.0.0.1:5000/api/v1/prendas/{id}
 - POST http://127.0.0.1:5000/api/v1/prendas
@@ -45,7 +45,7 @@ python run.py
   ```
 - DELETE http://127.0.0.1:5000/api/v1/prendas/{id}
 
-### Ventas
+### Sales
 - GET http://127.0.0.1:5000/api/v1/ventas
 - GET http://127.0.0.1:5000/api/v1/ventas/{id}
 - POST http://127.0.0.1:5000/api/v1/ventas
@@ -58,7 +58,7 @@ python run.py
   ```
 - DELETE http://127.0.0.1:5000/api/v1/ventas/{id}
 
-### Reportes
+### Reports
 - GET http://127.0.0.1:5000/api/v1/reportes/marcas-con-ventas
 - GET http://127.0.0.1:5000/api/v1/reportes/prendas-vendidas-con-inventario
 - GET http://127.0.0.1:5000/api/v1/reportes/cinco-marcas-mas-vendidas
